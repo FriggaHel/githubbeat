@@ -1,6 +1,6 @@
 # Githubbeat
 
-Welcome to Githubbeat.
+Welcome to Githubbeat, a beat designed to report Github Repository statistics (Starred / Watch) into ELK Stack
 
 Ensure that this folder is at the following location:
 `${GOPATH}/github.com/FriggaHel/githubbeat`
