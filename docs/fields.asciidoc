@@ -128,12 +128,92 @@ None
 
 
 [float]
-=== counter
+=== github.repository.fullname
+
+type: text
+
+required: True
+
+Full name of the Repository
+
+
+[float]
+=== github.repository.account
+
+type: text
+
+required: True
+
+Account name of the Repository
+
+
+[float]
+=== github.repository.name
+
+type: text
+
+required: True
+
+Repository name
+
+
+[float]
+=== github.repository.forks_count
 
 type: long
 
 required: True
 
-PLEASE UPDATE DOCUMENTATION
+Count of forks for this repository
+
+
+[float]
+=== github.repository.network_count
+
+type: long
+
+required: True
+
+Count of network for this repository
+
+
+[float]
+=== github.repository.open_issues_count
+
+type: long
+
+required: True
+
+Count of issues for this repository
+
+
+[float]
+=== github.repository.stargazers_count
+
+type: long
+
+required: True
+
+Count of stagazers for this repository
+
+
+[float]
+=== github.repository.subscribers_count
+
+type: long
+
+required: True
+
+Count of subscribers for this repository
+
+
+[float]
+=== github.repository.watchers_count
+
+type: long
+
+required: True
+
+Count of watchers for this repository
 
 

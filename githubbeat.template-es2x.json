@@ -45,8 +45,52 @@
             }
           }
         },
-        "counter": {
-          "type": "long"
+        "github": {
+          "properties": {
+            "repository": {
+              "properties": {
+                "account": {
+                  "index": "analyzed",
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "string"
+                },
+                "forks_count": {
+                  "type": "long"
+                },
+                "fullname": {
+                  "index": "analyzed",
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "string"
+                },
+                "name": {
+                  "index": "analyzed",
+                  "norms": {
+                    "enabled": false
+                  },
+                  "type": "string"
+                },
+                "network_count": {
+                  "type": "long"
+                },
+                "open_issues_count": {
+                  "type": "long"
+                },
+                "stargazers_count": {
+                  "type": "long"
+                },
+                "subscribers_count": {
+                  "type": "long"
+                },
+                "watchers_count": {
+                  "type": "long"
+                }
+              }
+            }
+          }
         },
         "meta": {
           "properties": {
