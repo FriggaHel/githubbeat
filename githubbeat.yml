@@ -9,8 +9,6 @@ githubbeat:
   repositories:
     - account: containous
       name: traefik
-    - account: moby
-      name: moby
 
 #================================ General =====================================
 

@@ -1,9 +1,7 @@
 package beater
 
 import (
-	"context"
 	"fmt"
-	"net/http"
 	"time"
 
 	"github.com/elastic/beats/libbeat/beat"
@@ -12,9 +10,6 @@ import (
 	"github.com/elastic/beats/libbeat/publisher"
 
 	"github.com/FriggaHel/githubbeat/config"
-	"github.com/google/go-github/github"
-
-	"golang.org/x/oauth2"
 )
 
 type Githubbeat struct {
@@ -42,20 +37,10 @@ func (bt *Githubbeat) Run(b *beat.Beat) error {
 
 	bt.client = b.Publisher.Connect()
 	ticker := time.NewTicker(bt.config.Period)
-	ctx := context.Background()
 
 	if bt.config.GithubToken != nil {
 		logp.Info("Using Github Token")
 	}
-
-	var tc *http.Client = nil
-	if bt.config.GithubToken != nil {
-		ts := oauth2.StaticTokenSource(
-			&oauth2.Token{AccessToken: *bt.config.GithubToken},
-		)
-		tc = oauth2.NewClient(ctx, ts)
-	}
-	client := github.NewClient(tc)
 
 	for {
 		select {
@@ -65,12 +50,22 @@ func (bt *Githubbeat) Run(b *beat.Beat) error {
 		}
 
 		for _, t := range bt.config.Repositories {
-			rep, resp, err := client.Repositories.Get(ctx, t.Account, t.Name)
+			r := NewRepository(bt, t.Account, t.Name)
+			rep, err := r.GetRepo()
 			if err != nil {
 				logp.Warn(fmt.Sprintf("Unable to fetch data for %s/%s", t.Account, t.Name))
 				continue
 			}
-			logp.Info(fmt.Sprintf("Remaining API calls: %d/%d", resp.Rate.Remaining, resp.Rate.Limit))
+
+			// Count PRs
+			issues, err := r.GetIssues("open")
+			prCount := 0
+			for _, is := range issues {
+				if is.PullRequestLinks != nil {
+					prCount++
+				}
+			}
+
 			event := common.MapStr{
 				"@timestamp": common.Time(time.Now()),
 				"type":       b.Name,
@@ -81,7 +76,8 @@ func (bt *Githubbeat) Run(b *beat.Beat) error {
 						"name":              t.Name,
 						"forks_count":       *rep.ForksCount,
 						"network_count":     *rep.NetworkCount,
-						"open_issues_count": *rep.OpenIssuesCount,
+						"open_issues_count": *rep.OpenIssuesCount - prCount,
+						"open_pr_count":     prCount,
 						"stargazers_count":  *rep.StargazersCount,
 						"subscribers_count": *rep.SubscribersCount,
 						"watchers_count":    *rep.WatchersCount,
