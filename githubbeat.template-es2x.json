@@ -79,6 +79,9 @@
                 "open_issues_count": {
                   "type": "long"
                 },
+                "open_pr_count": {
+                  "type": "long"
+                },
                 "stargazers_count": {
                   "type": "long"
                 },

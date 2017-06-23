@@ -32,6 +32,11 @@
       required: true
       description: >
         Count of issues for this repository
+    - name: github.repository.open_pr_count
+      type: long
+      required: true
+      description: >
+        Count of PR for this repository
     - name: github.repository.stargazers_count
       type: long
       required: true

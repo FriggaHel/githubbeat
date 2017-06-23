@@ -188,6 +188,16 @@ Count of issues for this repository
 
 
 [float]
+=== github.repository.open_pr_count
+
+type: long
+
+required: True
+
+Count of PR for this repository
+
+
+[float]
 === github.repository.stargazers_count
 
 type: long
