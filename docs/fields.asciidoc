@@ -130,7 +130,7 @@ None
 [float]
 === repository.fullname
 
-type: text
+type: keyword
 
 required: True
 
@@ -140,7 +140,7 @@ Full name of the Repository
 [float]
 === repository.account
 
-type: text
+type: keyword
 
 required: True
 
@@ -150,7 +150,7 @@ Account name of the Repository
 [float]
 === repository.name
 
-type: text
+type: keyword
 
 required: True
 

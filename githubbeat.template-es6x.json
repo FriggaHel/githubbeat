@@ -71,19 +71,19 @@
         "repository": {
           "properties": {
             "account": {
-              "norms": false,
-              "type": "text"
+              "ignore_above": 1024,
+              "type": "keyword"
             },
             "forks_count": {
               "type": "long"
             },
             "fullname": {
-              "norms": false,
-              "type": "text"
+              "ignore_above": 1024,
+              "type": "keyword"
             },
             "name": {
-              "norms": false,
-              "type": "text"
+              "ignore_above": 1024,
+              "type": "keyword"
             },
             "network_count": {
               "type": "long"

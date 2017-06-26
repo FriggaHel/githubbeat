@@ -3,17 +3,17 @@
   description:
   fields:
     - name: repository.fullname
-      type: text
+      type: keyword
       required: true
       description: >
         Full name of the Repository
     - name: repository.account
-      type: text
+      type: keyword
       required: true
       description: >
         Account name of the Repository
     - name: repository.name
-      type: text
+      type: keyword
       required: true
       description: >
         Repository name

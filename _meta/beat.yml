@@ -7,7 +7,7 @@ githubbeat:
   #github_token: <github_token>
   period: 60s
   step: 1h
-  fetch_path: false
+  fetch_past: false
   repositories:
     - account: containous
       name: traefik
