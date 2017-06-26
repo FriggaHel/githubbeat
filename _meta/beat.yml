@@ -6,7 +6,8 @@ githubbeat:
   # Defines how often an event is sent to the output
   #github_token: <github_token>
   period: 60s
-  index: "githubbeat-%{+yyyy.MM}"
+  step: 1h
+  fetch_path: false
   repositories:
     - account: containous
       name: traefik
