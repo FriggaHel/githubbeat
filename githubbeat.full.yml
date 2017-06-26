@@ -4,13 +4,12 @@
 
 githubbeat:
   # Defines how often an event is sent to the output
-  period: 60s
   #github_token: <github_token>
+  period: 60s
+  index: "githubbeat-%{+yyyy.MM}"
   repositories:
     - account: containous
       name: traefik
-    - account: moby
-      name: moby
 
 #================================ General ======================================
 

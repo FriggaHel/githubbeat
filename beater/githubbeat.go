@@ -69,19 +69,17 @@ func (bt *Githubbeat) Run(b *beat.Beat) error {
 			event := common.MapStr{
 				"@timestamp": common.Time(time.Now()),
 				"type":       b.Name,
-				"github": common.MapStr{
-					"repository": common.MapStr{
-						"fullname":          fmt.Sprintf("%s/%s", t.Account, t.Name),
-						"account":           t.Account,
-						"name":              t.Name,
-						"forks_count":       *rep.ForksCount,
-						"network_count":     *rep.NetworkCount,
-						"open_issues_count": *rep.OpenIssuesCount - prCount,
-						"open_pr_count":     prCount,
-						"stargazers_count":  *rep.StargazersCount,
-						"subscribers_count": *rep.SubscribersCount,
-						"watchers_count":    *rep.WatchersCount,
-					},
+				"repository": common.MapStr{
+					"fullname":          fmt.Sprintf("%s/%s", t.Account, t.Name),
+					"account":           t.Account,
+					"name":              t.Name,
+					"forks_count":       *rep.ForksCount,
+					"network_count":     *rep.NetworkCount,
+					"open_issues_count": *rep.OpenIssuesCount - prCount,
+					"open_pr_count":     prCount,
+					"stargazers_count":  *rep.StargazersCount,
+					"subscribers_count": *rep.SubscribersCount,
+					"watchers_count":    *rep.WatchersCount,
 				},
 			}
 			bt.client.PublishEvent(event)

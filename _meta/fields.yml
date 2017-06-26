@@ -2,52 +2,52 @@
   title: githubbeat
   description:
   fields:
-    - name: github.repository.fullname
+    - name: repository.fullname
       type: text
       required: true
       description: >
         Full name of the Repository
-    - name: github.repository.account
+    - name: repository.account
       type: text
       required: true
       description: >
         Account name of the Repository
-    - name: github.repository.name
+    - name: repository.name
       type: text
       required: true
       description: >
         Repository name
-    - name: github.repository.forks_count
+    - name: repository.forks_count
       type: long
       required: true
       description: >
         Count of forks for this repository
-    - name: github.repository.network_count
+    - name: repository.network_count
       type: long
       required: true
       description: >
         Count of network for this repository
-    - name: github.repository.open_issues_count
+    - name: repository.open_issues_count
       type: long
       required: true
       description: >
         Count of issues for this repository
-    - name: github.repository.open_pr_count
+    - name: repository.open_pr_count
       type: long
       required: true
       description: >
         Count of PR for this repository
-    - name: github.repository.stargazers_count
+    - name: repository.stargazers_count
       type: long
       required: true
       description: >
         Count of stagazers for this repository
-    - name: github.repository.subscribers_count
+    - name: repository.subscribers_count
       type: long
       required: true
       description: >
         Count of subscribers for this repository
-    - name: github.repository.watchers_count
+    - name: repository.watchers_count
       type: long
       required: true
       description: >

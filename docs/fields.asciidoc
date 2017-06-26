@@ -128,7 +128,7 @@ None
 
 
 [float]
-=== github.repository.fullname
+=== repository.fullname
 
 type: text
 
@@ -138,7 +138,7 @@ Full name of the Repository
 
 
 [float]
-=== github.repository.account
+=== repository.account
 
 type: text
 
@@ -148,7 +148,7 @@ Account name of the Repository
 
 
 [float]
-=== github.repository.name
+=== repository.name
 
 type: text
 
@@ -158,7 +158,7 @@ Repository name
 
 
 [float]
-=== github.repository.forks_count
+=== repository.forks_count
 
 type: long
 
@@ -168,7 +168,7 @@ Count of forks for this repository
 
 
 [float]
-=== github.repository.network_count
+=== repository.network_count
 
 type: long
 
@@ -178,7 +178,7 @@ Count of network for this repository
 
 
 [float]
-=== github.repository.open_issues_count
+=== repository.open_issues_count
 
 type: long
 
@@ -188,7 +188,7 @@ Count of issues for this repository
 
 
 [float]
-=== github.repository.open_pr_count
+=== repository.open_pr_count
 
 type: long
 
@@ -198,7 +198,7 @@ Count of PR for this repository
 
 
 [float]
-=== github.repository.stargazers_count
+=== repository.stargazers_count
 
 type: long
 
@@ -208,7 +208,7 @@ Count of stagazers for this repository
 
 
 [float]
-=== github.repository.subscribers_count
+=== repository.subscribers_count
 
 type: long
 
@@ -218,7 +218,7 @@ Count of subscribers for this repository
 
 
 [float]
-=== github.repository.watchers_count
+=== repository.watchers_count
 
 type: long
 

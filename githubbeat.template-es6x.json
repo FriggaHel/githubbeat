@@ -36,47 +36,6 @@
             }
           }
         },
-        "github": {
-          "properties": {
-            "repository": {
-              "properties": {
-                "account": {
-                  "norms": false,
-                  "type": "text"
-                },
-                "forks_count": {
-                  "type": "long"
-                },
-                "fullname": {
-                  "norms": false,
-                  "type": "text"
-                },
-                "name": {
-                  "norms": false,
-                  "type": "text"
-                },
-                "network_count": {
-                  "type": "long"
-                },
-                "open_issues_count": {
-                  "type": "long"
-                },
-                "open_pr_count": {
-                  "type": "long"
-                },
-                "stargazers_count": {
-                  "type": "long"
-                },
-                "subscribers_count": {
-                  "type": "long"
-                },
-                "watchers_count": {
-                  "type": "long"
-                }
-              }
-            }
-          }
-        },
         "meta": {
           "properties": {
             "cloud": {
@@ -106,6 +65,43 @@
                   "type": "keyword"
                 }
               }
+            }
+          }
+        },
+        "repository": {
+          "properties": {
+            "account": {
+              "norms": false,
+              "type": "text"
+            },
+            "forks_count": {
+              "type": "long"
+            },
+            "fullname": {
+              "norms": false,
+              "type": "text"
+            },
+            "name": {
+              "norms": false,
+              "type": "text"
+            },
+            "network_count": {
+              "type": "long"
+            },
+            "open_issues_count": {
+              "type": "long"
+            },
+            "open_pr_count": {
+              "type": "long"
+            },
+            "stargazers_count": {
+              "type": "long"
+            },
+            "subscribers_count": {
+              "type": "long"
+            },
+            "watchers_count": {
+              "type": "long"
             }
           }
         },
